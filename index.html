@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão Campo-Cidade - Agricultura Familiar</title>
+   </head>
+<body>
+    <header>
+        <h1>Festejando a Conexão Campo-Cidade</h1>
+        <p>Agricultura Familiar alimentando o Brasil</p>
+    </header>
+
+    <main class="container">
+        <section id="sobre">
+            <h2>Sobre o Projeto</h2>
+            <p>Conectamos produtores rurais da agricultura familiar com consumidores urbanos, promovendo alimentação saudável e desenvolvimento sustentável.</p>
+        </section>
+
+        <section id="produtos">
+            <h2>Produtos da Agricultura Familiar</h2>
+            <div id="lista-produtos">
+                <!-- Os produtos serão carregados via JavaScript -->
+            </div>
+        </section>
+
+        <section id="mapa">
+            <h2>Onde encontrar</h2>
+            <p>Mapa interativo com feiras e pontos de venda</p>
+        </section>
+    </main>
+
+    <script>
+        // Dados dos produtos
+        const produtos = [
+            { nome: "Hortaliças Orgânicas", produtor: "Fazenda Esperança", local: "Zona Rural - Município A" },
+            { nome: "Frutas da Estação", produtor: "Sítio Frutificar", local: "Zona Rural - Município B" },
+            { nome: "Queijo Artesanal", produtor: "Fazenda Leite Puro", local: "Zona Rural - Município C" },
+            { nome: "Mel Natural", produtor: "Apiário Doce Vida", local: "Zona Rural - Município D" }
+        ];
+
+        // Carrega os produtos na página
+        const listaProdutos = document.getElementById('lista-produtos');
+        
+        produtos.forEach(produto => {
+            const divProduto = document.createElement('div');
+            divProduto.className = 'produto';
+            divProduto.innerHTML = `
+                <h3>${produto.nome}</h3>
+                <p><strong>Produtor:</strong> ${produto.produtor}</p>
+                <p><strong>Localização:</strong> ${produto.local}</p>
+            `;
+            listaProdutos.appendChild(divProduto);
+        });
+
+        // Simulação de mapa (em projeto real, integraria com Google Maps ou similar)
+        const mapa = document.getElementById('mapa');
+        mapa.addEventListener('click', () => {
+            alert('Aqui seria exibido um mapa interativo com os pontos de venda!');
+        });
+    </script>
+</body>
+</html>
